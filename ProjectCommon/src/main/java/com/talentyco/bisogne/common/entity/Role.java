@@ -2,7 +2,11 @@ package com.talentyco.bisogne.common.entity;
 
 import javax.persistence.*;
 
- 
+/**
+ * Creamos la clase Role en la Common Entity
+ */
+
+
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -11,11 +15,11 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "", length = 40, nullable = false, unique = true)
+    @Column(name = "name", length = 40, nullable = false, unique = true)
     private String name;
 
     @Lob
-    @Column(name = "", length = 150, nullable = false)
+    @Column(name = "description", length = 1500, nullable = false)
     private String description;
 
     public Role() {
@@ -66,22 +70,22 @@ public class Role {
         return result;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Role other = (Role) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
-    }
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj)
+//            return true;
+//        if (obj == null)
+//            return false;
+//        if (getClass() != obj.getClass())
+//            return false;
+//        Role other = (Role) obj;
+//        if (id == null) {
+//            if (other.id != null)
+//                return false;
+//        } else if (!id.equals(other.id))
+//            return false;
+//        return true;
+//    }
 
     @Override
     public String toString() {

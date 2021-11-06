@@ -7,22 +7,23 @@ import com.talentyco.bisogne.common.entity.Role;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
 
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)
 public class RoleRepositoryTests {
 
     @Autowired
-    RoleRepository roleRepository;
+    private RoleRepository roleRepository;
 
     @Test
     public void testCreateFirstRole() {
-        Role roleAdmin = new Role("Admin", "manage everithing");
+        Role roleAdmin = new Role("Admin", "manage everything");
         Role saveRole = roleRepository.save(roleAdmin);
 
         assertThat(saveRole.getId()).isGreaterThan(0);
