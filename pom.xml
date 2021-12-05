@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>springboot-multimodulo-bisogne</name>
-  <description>Projecto Raíz</description>
+  <description>Proyecto Raíz</description>
   
   <modules>
 	<module>ProjectCommon</module>

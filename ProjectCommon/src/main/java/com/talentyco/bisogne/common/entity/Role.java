@@ -1,12 +1,19 @@
 package com.talentyco.bisogne.common.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 /**
  * Creamos la clase Role en la Common Entity
  */
 
-
+@Data
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "roles")
 public class Role {

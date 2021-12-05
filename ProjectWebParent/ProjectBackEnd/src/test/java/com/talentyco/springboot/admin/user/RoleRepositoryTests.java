@@ -18,8 +18,10 @@ import java.util.List;
 @Rollback(false)
 public class RoleRepositoryTests {
 
+
     @Autowired
     private RoleRepository roleRepository;
+
 
     @Test
     public void testCreateFirstRole() {
@@ -32,7 +34,7 @@ public class RoleRepositoryTests {
     @Test
     public void testCreateRestRoles() {
         Role roleSalesperson = new Role("Salesperson", "manage product price, "
-                + "customers, shipping, ordes and sales report");
+                + "customers, shipping, orders and sales report");
 
         Role roleEditor = new Role("Editor", "manage product price, "
                 + "products, articles and menus");

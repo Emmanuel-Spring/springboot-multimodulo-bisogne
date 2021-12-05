@@ -118,7 +118,7 @@
             <artifactId>webjars-locator-core</artifactId>
         </dependency>
 
-        <!--compartimos las dependecias de COMMON repositories-->
+        <!--compartimos las dependecias de COMMON repositories, solo las entidades -->
         <dependency>
             <groupId>com.talentyco</groupId>
             <artifactId>ProjectCommon</artifactId>
