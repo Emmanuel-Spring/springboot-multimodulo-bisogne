@@ -5,14 +5,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-/**
- * Java Title
- *
- * @author Emmanuel Nieto Muñoz
- * @version: xx/10/2021/1.0
- * @see <a href = "" />  </a>
- */
-
 @MappedSuperclass
 public abstract class IdBasedEntity {
 

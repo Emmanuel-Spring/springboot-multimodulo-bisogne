@@ -2,13 +2,13 @@ package com.talentyco.bisogne.common.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
 
-/**
- * Creamos la clase Role en la Common Entity
+/**  Project Common Entities
+ *   Creamos la clase Role en la Common Entity
+ *   Generamos todas las clases entities y la importamos vía dependencias (POM.xml)
  */
 
 @Data
@@ -18,15 +18,16 @@ import javax.persistence.*;
 @Table(name = "roles")
 public class Role {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", length = 40, nullable = false, unique = true)
+    @Column(length = 40, nullable = false, unique = true)
     private String name;
 
     @Lob
-    @Column(name = "description", length = 1500, nullable = false)
+    @Column(length = 1500, nullable = false)
     private String description;
 
     public Role() {

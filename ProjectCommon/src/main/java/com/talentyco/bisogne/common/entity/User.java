@@ -1,9 +1,16 @@
 package com.talentyco.bisogne.common.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@AllArgsConstructor
+@Data
+@ToString
 @Entity
 @Table(name = "users")
 public class User {
@@ -27,6 +34,7 @@ public class User {
 	@Column(length = 64)
 	private String photos;
 
+	@Column
 	private boolean enabled;
 
 	@ManyToMany(fetch = FetchType.EAGER)
