@@ -11,6 +11,7 @@ import com.talentyco.bisogne.common.entity.User;
 
 import javax.validation.Valid;
 
+
 @Controller
 public class UserController {
 
