@@ -56,7 +56,7 @@
 <li style="color: red;">ProductNotFoundException.java</li>
 </ul>
 <br>
-<pre>
+<textarea name="code" <strong>class="java:nogutter"</strong> rows="5" cols="80">
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -101,4 +101,4 @@
 		</dependency>
 	</dependencies>
 </project>
-</pre>
+</textarea>
