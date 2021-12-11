@@ -7,9 +7,9 @@
 <br>
 <h4>com.talentyco.bisogne.common.entity</h4>
 <ul> 
-<li style="color: red;">AbstractAddress.java</li>
-<li style="color: red;">IdBasedEntity.java</li>
-<li style="color: red;">AbstractAddressWithCountry.java</li>
+<li style="color: red">AbstractAddress.java</li>
+<li style="color: #f03c15">IdBasedEntity.java</li>
+<li style="color: #f03c55">AbstractAddressWithCountry.java</li>
 <li style="color: red;">Address.java</li>
 <li style="color: red;">Authentication.java</li>
 <li style="color: red;">Brand.java</li>
@@ -56,49 +56,3 @@
 <li style="color: red;">ProductNotFoundException.java</li>
 </ul>
 <br>
-<textarea name="code" <strong>class="java:nogutter"</strong> rows="5" cols="80">
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.6</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.talentyco</groupId>
-	<artifactId>ProjectCommon</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>ProjectCommon</name>
-	<description>Project Common  All Entity</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-            <version>2.5.6</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.22</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
-</project>
-</textarea>
