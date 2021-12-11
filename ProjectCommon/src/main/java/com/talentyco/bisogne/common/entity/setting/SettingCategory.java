@@ -7,5 +7,4 @@ public enum SettingCategory {
     MAIL_TEMPLATE,
     CURRENCY,
     PAYMENT
-
 }

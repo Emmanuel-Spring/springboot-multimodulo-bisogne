@@ -1,23 +1,23 @@
 package com.talentyco.bisogne.common.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.ToString;
-
-import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
-@AllArgsConstructor
-@Data
-@ToString
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.talentyco.bisogne.common.Constants;
+
 @Entity
 @Table(name = "users")
-public class User {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class User extends IdBasedEntity {
 
 	@Column(length = 128, nullable = false, unique = true)
 	private String email;
@@ -34,12 +34,14 @@ public class User {
 	@Column(length = 64)
 	private String photos;
 
-	@Column
 	private boolean enabled;
 
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"),
-	    inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(
+			name = "users_roles",
+			joinColumns = @JoinColumn(name = "user_id"),
+			inverseJoinColumns = @JoinColumn(name = "role_id")
+	)
 	private Set<Role> roles = new HashSet<>();
 
 	public User() {
@@ -50,15 +52,6 @@ public class User {
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
-
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getEmail() {
@@ -119,5 +112,36 @@ public class User {
 
 	public void addRole(Role role) {
 		this.roles.add(role);
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", roles=" + roles + "]";
+	}
+
+	@Transient
+	public String getPhotosImagePath() {
+		if (id == null || photos == null) return "/images/default-user.png";
+
+		return Constants.S3_BASE_URI + "/user-photos/" + this.id + "/" + this.photos;
+	}
+
+	@Transient
+	public String getFullName() {
+		return firstName + " " + lastName;
+	}
+
+	public boolean hasRole(String roleName) {
+		Iterator<Role> iterator = roles.iterator();
+
+		while (iterator.hasNext()) {
+			Role role = iterator.next();
+			if (role.getName().equals(roleName)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

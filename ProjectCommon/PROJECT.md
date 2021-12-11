@@ -8,11 +8,11 @@
 <h4>com.talentyco.bisogne.common.entity</h4>
 <ul> 
 <li style="color: red">AbstractAddress.java</li>
-<li style="color: #f03c15">IdBasedEntity.java</li>
+<li style="color: #f03c15">IdBasedEntity.java  (Completed)</li>
 <li style="color: #f03c55">AbstractAddressWithCountry.java</li>
 <li style="color: red;">Address.java</li>
-<li style="color: red;">Authentication.java</li>
-<li style="color: red;">Brand.java</li>
+<li style="color: red;">AuthenticationType.java</li>
+<li style="color: red;">Brand.java  (Completed)</li>
 <li style="color: red;">CardItem.java</li>
 <li style="color: red;">Category.java</li>
 <li style="color: red;">Country.java</li>
@@ -22,7 +22,7 @@
 <li style="color: red;">ShippingRate.java</li>
 <li style="color: red;">State.java</li>
 <li style="color: red;">StateDTO.java</li>
-<li style="color: red;">User.java</li>
+<li style="color: red;">User.java  (Completed)</li>
 </ul>
 <br>
 <h4>com.talentyco.bisogne.common.entity.order</h4>

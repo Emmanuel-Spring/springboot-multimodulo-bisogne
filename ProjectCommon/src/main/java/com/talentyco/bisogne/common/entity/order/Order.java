@@ -1,9 +1,14 @@
 package com.talentyco.bisogne.common.entity.order;
 
 
-import com.talentyco.bisogne.common.entity.AbstractAddress;
-import com.talentyco.bisogne.common.entity.Address;
-import com.talentyco.bisogne.common.entity.Customer;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,23 +22,16 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
+import com.talentyco.bisogne.common.entity.AbstractAddress;
+import com.talentyco.bisogne.common.entity.Address;
+import com.talentyco.bisogne.common.entity.Customer;
 
 @Entity
 @Table(name = "orders")
 public class Order extends AbstractAddress {
 
     @Column(nullable = false, length = 45)
-    private String Country;
+    private String country;
 
     private Date orderTime;
 
@@ -43,8 +41,8 @@ public class Order extends AbstractAddress {
     private float tax;
     private float total;
 
-    private int deliveryDays;
-    private  Date deliveryDate;
+    private int deliverDays;
+    private Date deliverDate;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
@@ -62,8 +60,6 @@ public class Order extends AbstractAddress {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("updatedTime ASC")
     private List<OrderTrack> orderTracks = new ArrayList<>();
-
-
 
     public String getCountry() {
         return country;

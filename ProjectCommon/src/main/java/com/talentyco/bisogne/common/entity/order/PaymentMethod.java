@@ -1,8 +1,9 @@
 package com.talentyco.bisogne.common.entity.order;
 
 
-
-public class PaymentMethod {
-
-
+public enum PaymentMethod {
+    COD,
+    CREDIT_CARD,
+    PAYPAL
 }
+

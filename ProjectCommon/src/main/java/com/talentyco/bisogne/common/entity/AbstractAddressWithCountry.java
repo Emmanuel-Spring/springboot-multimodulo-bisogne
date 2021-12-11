@@ -1,14 +1,11 @@
 package com.talentyco.bisogne.common.entity;
 
-
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class AbstractAddressWithCountry extends  AbstractAddress {
-
-
+public class AbstractAddressWithCountry extends AbstractAddress {
     @ManyToOne
     @JoinColumn(name = "country_id")
     protected Country country;
@@ -42,7 +39,4 @@ public class AbstractAddressWithCountry extends  AbstractAddress {
 
         return address;
     }
-}
-
-
 }

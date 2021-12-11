@@ -1,85 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta
-           http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" />
-
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">-->
-
-<title>Bisogné Admin</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Home - Shopme Admin', 'none')" />
 <body>
 <div class="container-fluid">
-<div>
-    <nav class="navbar navbar-expand bg-light navbar-light">
-        <a class="navbar-brand" th:href="@{/}">
-        <img th:src="@{/images/barbershop.png}" alt="Spring logo" width="70" height="70"/>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/users}">Usuarios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/categories}">Categorías</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/brand}">Marcas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/products}">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/customers}">Clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/shipping}">Envíos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/order}">Órdenes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/sales}">Ventas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/articles}">Artículos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/menus}">Menus</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/setting}">Configuración</a>
-                </li>
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Shopme Control Panel</h2>
+		Welcome 
+		<a th:href="@{/account}" 
+			sec:authentication="principal.fullname"></a>	
+		<span sec:authentication="principal.authorities"></span>		
+	</div>
 
-            </ul>
-        </div>
-    </nav>
+	<div th:replace="fragments :: footer"></div>
+	
 </div>
-</div>
-<div>
-    <div>
-    <h3 class="text-primary">Ecommerce Peluquería Bisogne Control Panel</h3>
-</div>
-    <h5 class="text-dark">Panel Control Peluquería Bisogne  -  Copyright &copy; BarberShop & Salón de belleza para caballeroa</h5>
-</div>
-
-
-
-
-
-
 </body>
-<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-<script type="text/javascript" th:src="@{/webjars/js/jquery-3.3.1.min.js}"></script>
-<script type="text/javascript" th:src="@{/webjars/js/popper.min.js}"></script>
-<script type="text/javascript" th:src="@{/webjars/js/bootstrap.min.js}"></script>
-<script type="text/javascript" th:src="@{/webjars/js/jquery-ui.min.js}"></script>
 </html>

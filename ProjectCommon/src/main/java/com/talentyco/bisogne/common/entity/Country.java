@@ -1,15 +1,12 @@
 package com.talentyco.bisogne.common.entity;
 
-
-import lombok.Data;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.Set;
 
-@Data
 @Entity
 @Table(name = "countries")
 public class Country extends IdBasedEntity {
@@ -24,6 +21,7 @@ public class Country extends IdBasedEntity {
     private Set<State> states;
 
     public Country() {
+
     }
 
     public Country(Integer id) {
@@ -66,6 +64,4 @@ public class Country extends IdBasedEntity {
     public String toString() {
         return "Country [id=" + id + ", name=" + name + ", code=" + code + "]";
     }
-
-
 }
