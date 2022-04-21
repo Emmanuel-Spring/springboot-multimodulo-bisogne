@@ -1,6 +1,5 @@
 package com.talentyco.bisogne.common.entity.product;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -27,7 +26,6 @@ public class ProductDetail extends IdBasedEntity {
     }
 
     public ProductDetail(Integer id, String name, String value, Product product) {
-        super();
         this.id = id;
         this.name = name;
         this.value = value;
@@ -63,5 +61,4 @@ public class ProductDetail extends IdBasedEntity {
     public void setProduct(Product product) {
         this.product = product;
     }
-
 }

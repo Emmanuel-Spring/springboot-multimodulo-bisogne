@@ -23,7 +23,6 @@ public class Setting {
     private SettingCategory category;
 
     public Setting() {
-
     }
 
     public Setting(String key) {
@@ -89,6 +88,4 @@ public class Setting {
     public String toString() {
         return "Setting [key=" + key + ", value=" + value + "]";
     }
-
-
 }
